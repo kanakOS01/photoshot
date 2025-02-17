@@ -1,0 +1,22 @@
+[project]
+name = "photoshot"
+version = "0.1.0"
+description = "The Open Source application to generate professional grade images with AI"
+authors = [
+    {name = "Kanak Tanwar",email = "kanaktanwarpro@gmail.com"}
+]
+license = {text = "MIT"}
+readme = "README.md"
+requires-python = ">=3.9"
+
+dependencies = [
+    "fastapi[standard] (>=0.115.8,<0.116.0)",
+    "clerk-backend-api (>=1.7.2,<2.0.0)",
+    "sqlalchemy (>=2.0.38,<3.0.0)",
+    "asyncpg (>=0.30.0,<0.31.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"

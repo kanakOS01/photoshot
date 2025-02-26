@@ -1,10 +1,10 @@
-from fastapi import FastAPI, Depends
+from fastapi import Depends, FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from backend.routers import ai, image, pack
-from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import text
+from sqlalchemy.ext.asyncio import AsyncSession
 
 from backend.database import get_db
+from backend.routers import ai, image, pack
 
 app = FastAPI()
 ORIGINS = ["*"]
@@ -37,4 +37,3 @@ async def test_db(db: AsyncSession = Depends(get_db)):
         return "success"
     except Exception as e:
         return e
-    

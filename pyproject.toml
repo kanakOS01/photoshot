@@ -19,10 +19,35 @@ dependencies = [
     "psycopg2 (>=2.9.10,<3.0.0)"
 ]
 
-
 [tool.poetry]
 package-mode = false
 
+[tool.poetry.group.dev.dependencies]
+pre-commit = "^4.1.0"
+black = "^25.1.0"
+isort = "^6.0.0"
+
+[tool.black]
+line-length = 120
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+  | \.history
+)/
+'''
+
+[tool.isort]
+profile = "black"
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
